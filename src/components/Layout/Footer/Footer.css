@@ -1,11 +1,14 @@
 .footer{
     width: 100%;
     align-items: center;
+    justify-content: center;
     background-color: #001d3d;
     height: 15vh;
 }
 
 .footer-container{
     display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1.5em;
 }
