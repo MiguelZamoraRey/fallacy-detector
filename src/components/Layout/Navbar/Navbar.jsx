@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../../assets/FD_LOGO.png';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -11,14 +10,23 @@ export default function Navbar() {
         <div className="navbar-button" onClick={() => navigate('/home')}>
           Analizador
         </div>
-        <img
+        {/*<img
           className="navbar-badge"
           src={logo}
           onClick={() => navigate('/')}
           alt="Fallacy Detector"
-        />
+        />*/}
         <div className="navbar-button" onClick={() => navigate('/about')}>
           Sobre mí
+        </div>
+        <div
+          className="navbar-button"
+          onClick={() =>
+            (location.href =
+              'https://github.com/MiguelZamoraRey/fallacy-detector')
+          }
+        >
+          Código del proyecto
         </div>
       </div>
     </div>

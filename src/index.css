@@ -1,23 +1,21 @@
 /*COLORS
-  base: #000814
+  base: #038cfc
   main-dark: #001d3d
   main-light: #003566
   main-font-color:#fff
   secondary-main: #ffd60a
-  secondary-light: #ffc300
-  secondary-font-color:#000814
+  secondary-light: #038cfc
+  secondary-font-color:#038cfc
 */
 
-
-
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Quicksand, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #fff;
-  background-color: #000814;
+  color: black;/*#fff;*/
+  background-color: #fff;/*#038cfc;*/
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,11 +26,11 @@
 
 a {
   font-weight: 500;
-  color: #ffd60a;
+  color: #038cfc;
   text-decoration: inherit;
 }
 a:hover {
-  color: #ffc300;
+  color: #038cfc;
 }
 
 body {

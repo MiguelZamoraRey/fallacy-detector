@@ -15,12 +15,12 @@ function NotFound() {
           justifyContent: 'center',
         }}
       >
-        <EyeIcon color="#ffd60a" width="5em" height="5em" />
+        <EyeIcon color="#038cfc" width="5em" height="5em" />
         <p>
           Noting to see here, you can return{' '}
           <span
             onClick={() => navigate('/')}
-            style={{ color: '#ffc300', cursor: 'pointer', marginLeft: '0.2em' }}
+            style={{ color: '#038cfc', cursor: 'pointer', marginLeft: '0.2em' }}
           >
             home
           </span>

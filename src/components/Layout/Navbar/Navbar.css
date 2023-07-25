@@ -1,7 +1,7 @@
 .navbar{
     width: 100%;
     align-items: center;
-    background-color: #001d3d;
+    background-color: #038cfc; /*#f1f1f1; /*#001d3d;*/
     height: 10vh;
 }
 
@@ -22,7 +22,7 @@
 .navbar-button {
 	font-size: 0.8em;
 	font-weight: bold;
-	color: #fff;
+	color: black;/*#fff;*/
 	padding: 1em;
 	margin-right: 1em;
 	cursor: pointer;
@@ -30,7 +30,7 @@
 
 .navbar-button:hover {
 	font-weight: bold;
-	color: #ffd60a;
+	color: #fff;
 	padding: 1em;
 	cursor: pointer;
 	transform: scale(1.2);

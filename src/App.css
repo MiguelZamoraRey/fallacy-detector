@@ -1,1 +1,7 @@
 
+@font-face {
+    font-family: "Quicksand";
+    src: local("Quicksand"),
+     url("./assets/Quicksand-VariableFont_wght.ttf") format("truetype");
+    font-weight: bold;
+   }

@@ -47,7 +47,7 @@ export default function Analyser() {
                 en ellos con la ayuda de la{' '}
                 <span
                   style={{
-                    color: '#ffc300',
+                    color: '#038cfc',
                     marginLeft: '0.2em',
                   }}
                 >
@@ -91,7 +91,7 @@ export default function Analyser() {
                 }}
               />
               <Button
-                label="Busca las falacias del dicurso"
+                label="Busca las falacias del discurso"
                 style={{ display: 'none' }}
                 onClickFunction={() => {
                   refreshPage();
@@ -102,18 +102,37 @@ export default function Analyser() {
               <h3>Análisis</h3>
               <div className="analyzer-results-container">
                 {!isLoading && fallacies.length > 0 ? (
-                  fallacies.map((item) => (
-                    <>
-                      <div className="analyzer-results-badge">
-                        <p style={{ color: '#ffd60a', fontSize: '0.8em' }}>
-                          {item.tipo}
-                        </p>
-                        <p style={{ fontStyle: 'italic' }}>"{item.frase}"</p>
+                  <>
+                    {fallacies.map((item) => (
+                      <>
+                        <div className="analyzer-results-badge">
+                          <p style={{ color: '#038cfc', fontSize: '0.8em' }}>
+                            {item.tipo}
+                          </p>
+                          <p style={{ fontStyle: 'italic' }}>"{item.frase}"</p>
 
-                        <p>{item.explicacion}</p>
-                      </div>
-                    </>
-                  ))
+                          <p>{item.explicacion}</p>
+                        </div>
+                      </>
+                    ))}
+                    <div
+                      style={{
+                        height: '2em',
+                        padding: '1em',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Button
+                        label="Busca en otro discurso"
+                        onClickFunction={() => {
+                          refreshPage();
+                        }}
+                        style={{ width: '100%', marginBottom: '2em' }}
+                      />
+                    </div>
+                  </>
                 ) : (
                   <Spinner />
                 )}
@@ -122,25 +141,6 @@ export default function Analyser() {
           </>
         )}
       </div>
-      {!isLoading && fallacies.length > 0 && (
-        <div
-          style={{
-            height: '2em',
-            padding: '1em',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Button
-            label="Busca en otro discurso"
-            onClickFunction={() => {
-              refreshPage();
-            }}
-            style={{ width: '20%' }}
-          />
-        </div>
-      )}
     </div>
   );
 }
