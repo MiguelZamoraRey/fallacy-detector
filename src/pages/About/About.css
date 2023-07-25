@@ -1,9 +1,13 @@
 .about{
     min-height: 75vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-container{
+    max-width: 1270px;
     min-height: 100%;
     padding: 2em;
     display: flex;
