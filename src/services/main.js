@@ -18,6 +18,7 @@ const cleanAndGetJSON = (text) => {
   text = text.replace('/\t/g', '');
   text = text.replace('.', '');
   text = text.replace('/-/g', '');
+  text = text.substring(text.indexOf('['));
   console.log('CLEAN TEXT: ', text);
   return JSON.parse(text);
 };
