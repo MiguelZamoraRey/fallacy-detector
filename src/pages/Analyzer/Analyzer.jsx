@@ -37,10 +37,7 @@ export default function Analyser() {
       <div className="analyzer-container">
         {!analyzed ? (
           <>
-            <div
-              className="analyzer-textarea-container"
-              style={{ width: '100%' }}
-            >
+            <div className="analyzer-textarea-container">
               <p
                 style={{
                   width: '100%',
