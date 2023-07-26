@@ -2,13 +2,13 @@
     font-size: 1em;
     padding: 0.5em;
     color: #fff;
-    background-color:#0331fc ;
+    background-color:#038cfc ;
     border-radius: 5em;
     border: none;
     cursor: pointer;
 }
 
 .custom-button:hover{
-    background-color: #038cfc;
+    background-color: #0331fc ;
 	transition: 0.5s all;
 }

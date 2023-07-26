@@ -2,14 +2,24 @@
     width: 100%;
     align-items: center;
     background-color: #038cfc; /*#f1f1f1; /*#001d3d;*/
-    height: 10vh;
+    min-height: 10vh;
+}
+
+.navbar-title{
+	display: flex;
+    align-items: center;
+	justify-content: center;
+	line-height: 6vh;
+	color: #fff;
+	margin: 0;
+	cursor: pointer
 }
 
 .navbar-content{
     display: flex;
     align-items: center;
 	justify-content: center;
-	line-height: 8vh;
+	line-height: 3.5vh;
 }
 
 .navbar-badge{

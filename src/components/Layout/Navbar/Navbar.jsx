@@ -6,6 +6,14 @@ export default function Navbar() {
   const navigate = useNavigate();
   return (
     <div className="navbar">
+      <div
+        className="navbar-title"
+        onClick={() => {
+          navigate('/home');
+        }}
+      >
+        <h1>Fallacy detector</h1>
+      </div>
       <div className="navbar-content">
         <div className="navbar-button" onClick={() => navigate('/home')}>
           Analizador
@@ -26,7 +34,7 @@ export default function Navbar() {
               'https://github.com/MiguelZamoraRey/fallacy-detector')
           }
         >
-          Código del proyecto
+          Código
         </div>
       </div>
     </div>

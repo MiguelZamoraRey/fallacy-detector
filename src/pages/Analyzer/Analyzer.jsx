@@ -41,10 +41,25 @@ export default function Analyser() {
               className="analyzer-textarea-container"
               style={{ width: '100%' }}
             >
-              <p style={{ width: '100%', textAlign: 'center' }}>
-                Esta es una herramienta experimental destinada al analisis de
-                textos y discursos para la deteccción de las falacias utilizadas
-                en ellos con la ayuda de la{' '}
+              <p
+                style={{
+                  width: '100%',
+                  textAlign: 'center',
+                  backgroundColor: '#f1f1f1',
+                  padding: '0.5em',
+                }}
+              >
+                Esta es una herramienta{' '}
+                <span
+                  style={{
+                    color: '#038cfc',
+                    marginLeft: '0.2em',
+                  }}
+                >
+                  experimental
+                </span>{' '}
+                destinada al analisis de textos y discursos para la deteccción
+                de las falacias utilizadas en ellos con la ayuda de la{' '}
                 <span
                   style={{
                     color: '#038cfc',
