@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Navbar.css';
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   return (
     <div className="navbar">
       <div
@@ -16,16 +18,10 @@ export default function Navbar() {
       </div>
       <div className="navbar-content">
         <div className="navbar-button" onClick={() => navigate('/home')}>
-          Analizador
+          {t('navbar.analyzer')}
         </div>
-        {/*<img
-          className="navbar-badge"
-          src={logo}
-          onClick={() => navigate('/')}
-          alt="Fallacy Detector"
-        />*/}
         <div className="navbar-button" onClick={() => navigate('/about')}>
-          Sobre mí
+          {t('navbar.aboutMe')}
         </div>
         <div
           className="navbar-button"
@@ -34,7 +30,7 @@ export default function Navbar() {
               'https://github.com/MiguelZamoraRey/fallacy-detector')
           }
         >
-          Código
+          {t('navbar.code')}
         </div>
       </div>
     </div>

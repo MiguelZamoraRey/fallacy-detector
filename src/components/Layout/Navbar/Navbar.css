@@ -1,8 +1,9 @@
 .navbar{
     width: 100%;
     align-items: center;
-    background-color: #038cfc; /*#f1f1f1; /*#001d3d;*/
-    min-height: 10vh;
+	background: linear-gradient(to right, #0575e6, #0327a7);
+    min-height: 22.5vh;
+	clip-path: polygon(0 0,100% 0,100% calc(100% - 2em),50% 100%,0 calc(100% - 2em));
 }
 
 .navbar-title{

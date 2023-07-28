@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Button from '../../components/Layout/Buttons/Button';
 import Spinner from '../../components/others/Spinner/Spinner';
@@ -6,6 +7,7 @@ import { analyzeText } from '../../services/main';
 import './Analyzer.css';
 
 export default function Analyser() {
+  const { t } = useTranslation();
   const [analyzed, isAnalyzed] = useState(false);
   const [fallacies, setFallacies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -46,27 +48,26 @@ export default function Analyser() {
                   padding: '0.5em',
                 }}
               >
-                Esta es una herramienta{' '}
+                {t('analyzer.thisIsATool')}{' '}
                 <span
                   style={{
                     color: '#038cfc',
                     marginLeft: '0.2em',
                   }}
                 >
-                  experimental
+                  {t('analyzer.experimental')}
                 </span>{' '}
-                destinada al analisis de textos y discursos para la deteccción
-                de las falacias utilizadas en ellos con la ayuda de la{' '}
+                {t('analyzer.theAimIs')}{' '}
                 <span
                   style={{
                     color: '#038cfc',
                     marginLeft: '0.2em',
                   }}
                 >
-                  inteligencia artificial
+                  {t('analyzer.artificialIntelligence')}
                 </span>
               </p>
-              <h3>Pega aqui el texto que quieras analizar:</h3>
+              <h3>{t('analyzer.pasteHere')}:</h3>
               <textarea
                 className="analyzer-textarea"
                 value={text}
@@ -76,7 +77,7 @@ export default function Analyser() {
                 }}
               />
               <Button
-                label="Busca las falacias del dicurso"
+                label={t('analyzer.button1')}
                 onClickFunction={() => {
                   handleSubmit();
                 }}
@@ -86,13 +87,13 @@ export default function Analyser() {
               className="analyzer-textarea-container"
               style={{ display: 'none' }}
             >
-              <h3>Análisis</h3>
+              <h3>{t('analyzer.analysis')}</h3>
             </div>
           </>
         ) : (
           <>
             <div className="analyzer-textarea-container">
-              <h3>Pega aqui el texto que quieras analizar:</h3>
+              <h3>{t('analyzer.pasteHere')}:</h3>
               <textarea
                 className="analyzer-textarea"
                 disabled={true}
@@ -103,7 +104,7 @@ export default function Analyser() {
                 }}
               />
               <Button
-                label="Busca las falacias del discurso"
+                label={t('analyzer.button1')}
                 style={{ display: 'none' }}
                 onClickFunction={() => {
                   refreshPage();
@@ -111,7 +112,7 @@ export default function Analyser() {
               />
             </div>
             <div className="analyzer-textarea-container">
-              <h3>Análisis</h3>
+              <h3>{t('analyzer.analysis')}</h3>
               <div className="analyzer-results-container">
                 {!isLoading && fallacies.length > 0 ? (
                   <>
@@ -137,7 +138,7 @@ export default function Analyser() {
                       }}
                     >
                       <Button
-                        label="Busca en otro discurso"
+                        label={t('analyzer.button2')}
                         onClickFunction={() => {
                           refreshPage();
                         }}

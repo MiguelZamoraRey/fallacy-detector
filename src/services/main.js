@@ -1,6 +1,9 @@
 import { Configuration, OpenAIApi } from 'openai';
+import * as LanguageDetect from 'languagedetect';
 
 const SECRET = import.meta.env.VITE_OPEN_AI_SECRET;
+
+const lngDetector = new LanguageDetect();
 
 const configuration = new Configuration({
   apiKey: SECRET,
@@ -31,6 +34,13 @@ const cleanAndGetJSON = (text) => {
  */
 export const analyzeText = async (text, lang) => {
   let response = '';
+
+  const detectionResult = lngDetector.detect(text, 1);
+  if (detectionResult[0][0] === 'spanish') {
+    lang = 'es';
+  } else {
+    lang = 'en';
+  }
   if (lang === 'es' && SECRET) {
     response = await openai.createCompletion({
       model: 'text-davinci-003',
@@ -42,10 +52,10 @@ export const analyzeText = async (text, lang) => {
       presence_penalty: 0.6,
       stop: [' Human:', ' AI:'],
     });
-  } else if (lang === 'es' && SECRET) {
+  } else if (lang === 'en' && SECRET) {
     response = await openai.createCompletion({
       model: 'text-davinci-003',
-      prompt: `Detecta todas las falacias del siguiente texto y devuelvemelas en un formato array de objetos json con los campos "tipo", "frase", "explicacion". Un ejemplo de respuesta valida: "[{"tipo": "Falacia de petición de principio", "frase": "No creo que sea la solucion", "explicacion": "No se ofrece ninguna alternativa válida"},{"tipo": "Falacia de ambigüedad", "frase": "Instar al sector financiero a que evidentemente facilite ese tránsito del tipo variable al tipo fijo en un contexto de endurecimiento de la política monetaria", "explicacion": "No hay una base clara e inequívoca para la acusación."}]". El texto a analizar: ${text}`,
+      prompt: `Detect all fallacies in the following text and return them to me in an array format of json objects with the fields "tipo", "frase", "explicacion". An example of a valid answer: "[{"tipo": "Claim of principle fallacy", "frase": "I do not believe this is the solution", "explicacion": "No valid alternative is offered"},{"tipo": "Fallacy of ambiguity", "frase": "Urge the financial sector to obviously facilitate such a shift from floating to fixed rates in a context of tightening monetary policy", "explicacion": "There is no clear and unambiguous basis for the accusation."}]". The text to be analysed: ${text}`,
       temperature: 0.9,
       max_tokens: 2000,
       top_p: 1,

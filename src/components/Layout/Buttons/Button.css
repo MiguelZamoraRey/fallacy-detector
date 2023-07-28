@@ -2,13 +2,13 @@
     font-size: 1em;
     padding: 0.5em;
     color: #fff;
-    background-color:#038cfc ;
+    background: linear-gradient(to right, #0575e6, #0327a7);
     border-radius: 5em;
     border: none;
     cursor: pointer;
 }
 
 .custom-button:hover{
-    background-color: #0331fc ;
 	transition: 0.5s all;
+    background: linear-gradient(to right, #067df5, #042ec4);
 }
