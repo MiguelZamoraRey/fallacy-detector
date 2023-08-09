@@ -5,6 +5,7 @@ import Footer from './components/Layout/Footer/Footer';
 import Analyzer from './pages/Analyzer/Analyzer';
 import NotFound from './pages/NotFound/NotFound';
 import About from './pages/About/About';
+import './config/config.js';
 
 import './App.css';
 

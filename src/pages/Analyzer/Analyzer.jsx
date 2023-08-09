@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Button from '../../components/Layout/Buttons/Button';
 import Spinner from '../../components/others/Spinner/Spinner';
 import { analyzeText } from '../../services/main';
+import { useTranslation } from 'react-i18next';
 import './Analyzer.css';
 
 export default function Analyser() {
@@ -22,7 +22,7 @@ export default function Analyser() {
       setIsLoading(true);
       isAnalyzed(true);
       const analyze = async () => {
-        let response = await analyzeText(text, 'es');
+        let response = await analyzeText(text);
         if (!response) {
           setIsLoading(false);
           isAnalyzed(false);
