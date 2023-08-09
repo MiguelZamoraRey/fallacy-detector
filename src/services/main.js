@@ -14,13 +14,15 @@ export const analyzeText = async (text) => {
         'Content-type': 'application/json',
       },
     });
-    console.log('RESULT: ', result.data);
-    return result.data;
+    console.log('RESULT: ', result);
+    return result;
   } catch (err) {
-    return {
-      tipo: 'Error',
-      frase: '',
-      explicacion: 'The service failed to detect the fallacies',
-    };
+    return [
+      {
+        tipo: 'Error',
+        frase: '',
+        explicacion: 'The service failed to detect the fallacies',
+      },
+    ];
   }
 };
